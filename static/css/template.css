@@ -1,0 +1,84 @@
+body{
+    margin-left: 50px;
+    margin-right: 80px;
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+    background-color: #DADADA;
+    font-family: "Segoe UI", helvetica, serif, "Times New Roman";
+    }
+
+.close{
+      align-content: flex-end;
+      }
+
+.copyright{
+          color: white;
+          background-color: black;
+          font-size: 12px;
+          text-transform: none;
+          text-align: left;
+          padding: 5px;
+          }
+
+.container{
+          margin-left: 100px;
+          margin-right: 100px;
+          font-size: 14px;
+          }
+
+.navigation_bar{
+              color: #EDFFE4;
+              background-color: black;
+              font-size: 30px;
+              text-transform: uppercase;
+              text-align: center;
+              padding: 40px;
+              }
+
+.navigation-link{
+                color: #EDFFE4;
+                font-size: 30px;
+                text-transform: uppercase;
+                margin: 20px;
+                padding: 40px;
+                }
+/*This doesn't seem to be working*/
+.profile-info = {
+                border-style: solid;
+                border-width: 3px;
+                border-left-width: 5px;
+                border-right-width: 5px;
+                border-color: black;
+                }
+/*This doesn't seem to be working*/
+
+
+.announce{
+          border-style: solid;
+          border-width: 3px;
+          border-color: grey;
+          }
+
+.announce-text{
+              color: black;
+              font-size: 30px;
+              text-emphasis-style: sesame;
+              font-style: italic;
+              margin: 20px;
+              }
+
+h1{
+  color: black;
+  background-color: #8ED6D4;
+  text-transform: full-width;
+  text-align: center;
+  padding: 120px;
+  border-style:ridge;
+  border-width: medium;
+  border-color: #242528;
+  }
+
+h2{
+   text-transform: capitalize;
+   }

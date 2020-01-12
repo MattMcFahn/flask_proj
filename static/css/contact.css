@@ -1,0 +1,31 @@
+
+
+primary{
+        width: 100%;
+        }
+
+.secondary{
+           width: 50%;
+           margin-bottom: 300px;
+           border-width: medium;
+           border-color: black;
+           }
+
+.left-element{
+              float: left;
+              text-align: left;
+              border-width: medium;
+              border-color: black;
+              }
+
+.right-element{
+              float: right;
+              text-align: left;
+              border-width: medium;
+              border-color: black;
+              }
+
+.form-title{
+            text-transform: capitalize;
+            text-decoration: underline;
+            }

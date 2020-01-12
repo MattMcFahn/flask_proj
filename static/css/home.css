@@ -1,0 +1,13 @@
+.profile-info = {
+                border-style: solid;
+                border-width: 3px;
+                border-left-width: 5px;
+                border-right-width: 5px;
+                border-color: black;
+                }
+
+
+button{
+      position: absolute;
+      right: 200px;
+      }

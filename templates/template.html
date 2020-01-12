@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% if title %}
+  <title>Matt McFahn's Website - {{title}}</title>
+  {% else %}
+  <title>Matt McFahn's Website</title>
+  {% endif %}
+  <link rel="stylesheet" href="../static/css/template.css" href = "{{ url_for('static',filename='/static/css/template.css') }}">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navigation_bar">
+      <div class="inner_nav-bar">
+        <a class = "navigation-link" href="/">Home</a>
+        <a class = "navigation-link" href="/blog">Blog</a>
+        <a class = "navigation-link" href="/contact">Contact</a>
+      </div>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+    <hr>
+    <div class = "footer details">
+      <div class="copyright">
+        <p>
+        Copyright © 2020 | Matt McFahn | all rights reserved<br>
+        Github: <a href="https://github.com/MattMcFahn">Matt McFahn</a><br>
+        Thanks to <a href="http://www.htmldog.com">HTML Dog</a> for an introduction to HTML & CSS. Check them out!<br>
+      </p>
+    </div>
+      <!-- Todo -->
+    </div>
+  </div>
+</body>
+</html>
