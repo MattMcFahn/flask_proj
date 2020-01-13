@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import config
 
-sql_uri = r'postgresql://postgres:Mathap0l0gy@localhost/personal_portfolio_submissions'
+sql_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']=sql_uri
