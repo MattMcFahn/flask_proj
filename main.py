@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import config
+from send_email import email_comments
+
 
 sql_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
 
@@ -9,18 +11,24 @@ app.config['SQLALCHEMY_DATABASE_URI']=sql_uri
 
 db = SQLAlchemy(app)
 
-class Data(db.Model):
-    __tablename__="data"
+class CommentsData(db.Model):
+    __tablename__="contact_data"
     id=db.Column(db.Integer, primary_key = True)
-    email_=db.Column(db.String(220), unique=True)
-    name_=db.Column(db.String(220), unique=True)
+    email_=db.Column(db.String(220), unique=False)
+    name_=db.Column(db.String(220), unique=False)
     comments_=db.Column(db.String(10000), unique=False)
-    submission_=db.Column(db.String(220), unique=False)
-    
-    def __init(self, email_,name_,comments_,submission_):
+
+    def __init__(self, email_,name_,comments_):
         self.email_=email_
         self.name_=name_
         self.comments_=comments_
+
+class SurveyData(db.Model):
+    __tablename__="survey_data"
+    id=db.Column(db.Integer, primary_key = True)
+    submission_=db.Column(db.String(220), unique=False)
+
+    def __init__(self, submission_):
         self.submission_=submission_
 
 
@@ -42,15 +50,24 @@ def thank_you_contact():
         name=request.form['name']
         email=request.form['email']
         comments=request.form['contact-message']
-        return render_template("thank_you_contact.html", title="Thank you for your submission!", )
+
+        data=CommentsData(name, email, comments)
+        db.session.add(data)
+        db.session.commit()
+
+        email_comments(email, comments)
+        return render_template("thank_you_contact.html", title="Thank you for your submission!")
 
 @app.route("/thank_you_survey", methods=['POST'])
 def thank_you_survey():
     if request.method=='POST':
         submission=request.form['top-language']
-        return render_template("thank_you_survey.html", title="Thank you for your submission!", )
+
+        data=SurveyData(submission)
+        db.session.add(data)
+        db.session.commit()
+        return render_template("thank_you_survey.html", title="Thank you for your submission!")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
