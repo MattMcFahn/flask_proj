@@ -4,7 +4,8 @@ import config
 from send_email import email_comments
 
 
-sql_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
+sql_uri = r'postgres://jquisuxnncafjg:0e51d6d3092c0773eac12213ee38265b16145fe03678ef31b5a950824c5c8ffa@ec2-107-21-93-51.compute-1.amazonaws.com:5432/d627vaf4vp07p8?sslmode=require'
+#old_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']=sql_uri
