@@ -9,7 +9,7 @@ def email():
     try:
         from config import emails
         from_email_add = emails['gmail']
-    except ImportError as e:
+    except ImportError:
         from_email_add = os.environ.get['GMAIL']
     return from_email_add
 
@@ -21,7 +21,7 @@ def email_password():
     try:
         from config import passwords
         gmail_password = passwords['gmail']
-    except ImportError as e:
+    except ImportError:
         gmail_password = os.environ.get['GMAIL_PASSWORD']
     return gmail_password
 
@@ -31,7 +31,6 @@ def email_comments(email_target, comments):
     Emails a user noting that their comments have been
     noted, and giving them a copy of their submission.
     """
-    # NOTE - I should really reformat this as layout is awful
 
     smtpObj = smtplib.SMTP('smtp.gmail.com', 587) # Connect to gmail stmp provider, 'smtp.gmail.com'
     smtpObj.ehlo() # Say "hello" to the server
@@ -51,6 +50,7 @@ def email_comments(email_target, comments):
     # - Write message
 
     #Send the mail
+    
     smtpObj.sendmail(from_addr=from_addr,
                      to_addrs = email_target,
                      msg = msg)

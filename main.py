@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import config
 from send_email import email_comments
-
+from smtplib import SMTPRecipientsRefused
 
 sql_uri = r'postgres://ojsogizyxpmsht:2b62fd599fbac77125c5991edccf4d10f811fce0e72f9765597bfb8fac10d5df@ec2-174-129-255-15.compute-1.amazonaws.com:5432/d4ou5ir17dk44p?sslmode=require'
 #old_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
@@ -56,8 +56,11 @@ def thank_you_contact():
         db.session.add(data)
         db.session.commit()
 
-        email_comments(email, comments)
-        return render_template("thank_you_contact.html", title="Thank you for your submission!")
+        try:
+            email_comments(email, comments)
+            return render_template("thank_you_contact.html", title="Thank you for your submission!")
+        except SMTPRecipientsRefused:
+            return render_template("contact_failed.html", title="Invalid submission email")
 
 @app.route("/thank_you_survey", methods=['POST'])
 def thank_you_survey():

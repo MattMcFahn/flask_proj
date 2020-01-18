@@ -19,28 +19,27 @@
 <div id="primary">
   <div class = "secondary left-element">
     <h3 class = "form-title">Contact</h3>
-    <!-- TODO - Write up what the action is for form submission-->
     <form action="{{url_for('thank_you_contact')}}" method="post">
       <p>Name:</p>
-      <p><input name="name" value="Your name"></p>
+      <p><input name="name" value="Joe Bloggs"></p>
       <p>Email:</p>
-      <p><input name="email" value="Your email address"></p>
+      <p><input name="email" value=""></p>
       <p>Comments: </p>
-      <p><textarea rows="3" cols="20" name="contact-message">Your message</textarea></p
+      <p><textarea rows="3" cols="20" name="contact-message"></textarea></p
       <p><input type="submit"></p>
     </form>
-      </div>
+  </div>
   <div class = "secondary right-element">
     <h3 class = "form-title">Programming survey</h3>
     <form action="{{url_for('thank_you_survey')}}" method="post">
       <p>What is your language of choice:</p>
-      <p><input type="radio" name="top-language" value="Python (of course)">Python, of course</p>
+      <p><input type="radio" name="top-language" value="Python (of course)" checked>Python, of course</p>
       <p><input type="radio" name="top-language" value="Java">Java</p>
       <p><input type="radio" name="top-language" value="C">C</p>
-      <p><input type="radio" name="top-language" value="Javascript" checked>Javascript</p>
-      <p><input type="radio" name="top-language" value="Ruby" checked>Ruby</p>
+      <p><input type="radio" name="top-language" value="Javascript">Javascript</p>
+      <p><input type="radio" name="top-language" value="Ruby">Ruby</p>
       <p><input type="submit"></p>
-      </form>
+    </form>
   </div>
 </div>
 

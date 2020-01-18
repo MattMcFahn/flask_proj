@@ -8,6 +8,24 @@ body{
     font-family: "Segoe UI", helvetica, serif, "Times New Roman";
     }
 
+h1{
+  color: black;
+  background-color: #8ED6D4;
+  text-transform: full-width;
+  text-align: center;
+  padding: 120px;
+  border-style:ridge;
+  border-width: medium;
+  border-color: #242528;
+  }
+
+
+.footer-details{margin-top:20px;
+                }
+
+.copyright{margin-top:40px;
+          }
+
 .close{
       align-content: flex-end;
       }
@@ -67,18 +85,3 @@ body{
               font-style: italic;
               margin: 20px;
               }
-
-h1{
-  color: black;
-  background-color: #8ED6D4;
-  text-transform: full-width;
-  text-align: center;
-  padding: 120px;
-  border-style:ridge;
-  border-width: medium;
-  border-color: #242528;
-  }
-
-h2{
-   text-transform: capitalize;
-   }
