@@ -61,5 +61,6 @@ def survey_summary_barchart():
     y_pos = [0,1,2,3,4]
     plt.xticks(y_pos, x_labels, fontsize=9)
     plt.yticks(y_range) #None needs a tuple (,)
+    plt.savefig(fname = r'C:\Users\mattm\Documents\GitHub\flask_proj\plot\temp.png', dpi = 300)
     return fig
 
