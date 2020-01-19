@@ -7,6 +7,8 @@
   <title>Matt McFahn's Website</title>
   {% endif %}
   <link rel="stylesheet" href="../static/css/template.css" href = "{{ url_for('static',filename='/static/css/template.css') }}">
+  <script type = "text/javascript" src="static/js/template.js" charset="utf-8"></script>
+  <script type = "text/javascript" src="static/js/close_banner.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -19,7 +21,16 @@
       </div>
     </nav>
     <hr>
+    <div class = "heading-banner" id="headBanner" style="visible">
+      Welcome to my personal webpage, during its very early stages
+      <button type="button" class="close" onclick="hideEle()">
+        <span aria-hidden="true">×</span>
+      </button>  
+    <hr>
+    </div>
+
     {% block content %}{% endblock %}
+
     <hr>
     <div class = "footer-details">
       <div class="copyright">

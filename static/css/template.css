@@ -24,6 +24,10 @@ h5{
   margin: :0%;
   }
 
+  button{
+        position: absolute;
+        right: 200px;
+        }
 
 .profile-info{
               font-size: 90%

@@ -1,6 +1,6 @@
 {% extends "template.html" %}
 {% block content %}
-
+<script type = "text/javascript" src="static/js/validate_entry.js" charset="utf-8"></script>
 <link rel="stylesheet" href="../static/css/contact.css" href = "{{ url_for('static',filename='/static/css/template.css') }}">
 
 <div class = "lead-text">
@@ -23,10 +23,10 @@
       <p>Name:</p>
       <p><input name="name" value="Joe Bloggs"></p>
       <p>Email:</p>
-      <p><input name="email" value=""></p>
+      <p><input name="email" value="", id="emailSubmission"></p>
       <p>Comments: </p>
       <p><textarea rows="3" cols="20" name="contact-message"></textarea></p
-      <p><input type="submit"></p>
+      <p><input type="submit" onclick="return validateEntry()"></p>
     </form>
   </div>
   <div class = "secondary right-element">

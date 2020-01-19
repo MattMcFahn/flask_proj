@@ -56,11 +56,9 @@ def thank_you_contact():
         db.session.add(data)
         db.session.commit()
 
-        try:
-            email_comments(email, comments)
-            return render_template("thank_you_contact.html", title="Thank you for your submission!")
-        except SMTPRecipientsRefused:
-            return render_template("contact_failed.html", title="Invalid submission email")
+        email_comments(email, comments)
+        return render_template("thank_you_contact.html", title="Thank you for your submission!")
+
 
 @app.route("/thank_you_survey", methods=['POST'])
 def thank_you_survey():
