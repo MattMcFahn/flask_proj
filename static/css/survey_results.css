@@ -1,0 +1,52 @@
+div#primary{
+        width: 100%;
+        display: inline-block;
+        }
+
+h2{
+  margin: 0px;
+  padding:0px;
+}
+
+.secondary{
+           width: 50%;
+           border-width: medium;
+           border-color: black;
+           }
+
+.left-element{
+              float: left;
+              text-align: left;
+              border-width: medium;
+              border-color: black;
+              }
+
+.right-element{
+              float: right;
+              text-align: left;
+              border-width: medium;
+              border-color: black;
+              }
+
+.form-title{
+            text-transform: capitalize;
+            text-decoration: underline;
+            }
+
+table, tr, td {border: 1px solid black;
+}
+
+table{
+  width: 80%;
+  height: 120%;
+  table-layout: fixed;
+}
+
+td, tr{
+    margin: 5px;
+    padding: 5px;
+}
+
+.header-table-row{
+  background-color: grey;
+}

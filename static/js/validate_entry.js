@@ -6,6 +6,11 @@ function validateEntry() {
   else
   alert(`You have entered an invalid email address!
     \nPlease enter an email in the form: username@domain.ext`)
-    
+
   return (false)
+}
+
+function thanksMessage() {
+  alert(`Thanks for the submission!
+    \nRerouting to display early survey results now.`)
 }

@@ -1,0 +1,49 @@
+{% extends "template.html" %}
+{% block content %}
+<script type = "text/javascript" src="static/js/validate_entry.js" charset="utf-8"></script>
+<link rel="stylesheet" href="../static/css/survey_results.css" href = "{{ url_for('static',filename='/static/css/template.css') }}">
+
+<div class = "lead-text" id="thanks-message" style="return SurveyResultsReqMethod()">
+  <p>
+  If you've rerouted here by submitting to the survey, thank you!<br>
+  If not, please do check it out on the "Contact" page.<br><br>
+  You can check out an overview of the results below.
+  </p>
+  <br><hr>
+  <div id="primary">
+    <div class = "secondary left-element">
+      <h2>Bar chart of results:</h2>
+      <img src="/plot/temp" width="80%">
+    </div>
+    <div class = "secondary right-element">
+      <h2>Breakdown of results:</h2>
+      <table>
+        <tr>
+          <td class ="header-table-row"><strong>Choice</strong></td>
+          <td class ="header-table-row"><strong>Number of responses</strong></td>
+        </tr>
+        <tr>
+          <td>Python (of course)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Java</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Javascript</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Ruby</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+</div>
+
+{% endblock %}
