@@ -67,7 +67,7 @@ def thank_you_contact():
 
 
 @app.route("/survey_results", methods=['GET', 'POST'])
-def thank_you_survey():
+def survey_results():
     if request.method=='POST':
         submission=request.form['top-language']
 

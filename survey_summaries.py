@@ -45,8 +45,13 @@ def retrieve_survey_data():
 
 def survey_summary_barchart():
     survey_data = retrieve_survey_data()
-    x_labels = [ x for x in survey_data.keys()]
-    x_labels[0] = 'Python \n (of course)'
+    survey_data = {k: v for k, v in sorted(survey_data.items(), 
+                                           key=lambda item: item[1])}
+    survey_data["Python\n(of course)"] \
+        = survey_data.pop("Python (of course)")
+    
+    x_labels = [x for x in survey_data.keys()]
+    #x_labels[0] = 'Python \n (of course)'
     y_range = __set_natural_y_range__(survey_data.values())
     fig = plt.figure(figsize=(5,3.2),dpi=300)
     plt.bar(x = range(0,len(x_labels)),height = survey_data.values())
