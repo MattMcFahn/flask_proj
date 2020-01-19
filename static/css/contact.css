@@ -1,12 +1,10 @@
-
-
-primary{
+div#primary{
         width: 100%;
+        display: inline-block;
         }
 
 .secondary{
            width: 50%;
-           margin-bottom: 200px;
            border-width: medium;
            border-color: black;
            }
