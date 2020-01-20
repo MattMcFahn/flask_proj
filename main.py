@@ -1,7 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import config
 from send_email import email_comments
+from smtplib import SMTPRecipientsRefused
+
+from survey_summaries import survey_summary_barchart
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import io
+
 
 
 sql_uri = r'postgres://ojsogizyxpmsht:2b62fd599fbac77125c5991edccf4d10f811fce0e72f9765597bfb8fac10d5df@ec2-174-129-255-15.compute-1.amazonaws.com:5432/d4ou5ir17dk44p?sslmode=require'
@@ -59,15 +65,30 @@ def thank_you_contact():
         email_comments(email, comments)
         return render_template("thank_you_contact.html", title="Thank you for your submission!")
 
-@app.route("/thank_you_survey", methods=['POST'])
-def thank_you_survey():
+
+@app.route("/survey_results", methods=['GET', 'POST'])
+def survey_results():
     if request.method=='POST':
         submission=request.form['top-language']
 
         data=SurveyData(submission)
         db.session.add(data)
         db.session.commit()
-        return render_template("thank_you_survey.html", title="Thank you for your submission!")
+        # Code to select avg height
+        return render_template("survey_results.html", title="Thank you for your submission!")
+    if request.method=='GET':
+        # Code to select avg height
+        return render_template("survey_results.html", title="Survey Results")
+
+@app.route("/plot/temp")
+def plot_temp():
+    fig = survey_summary_barchart()
+    canvas = FigureCanvas(fig)
+    output = io.BytesIO()
+    canvas.print_png(output)
+    response = make_response(output.getvalue())
+    response.mimetype = 'image/png'
+    return response
 
 
 if __name__ == "__main__":

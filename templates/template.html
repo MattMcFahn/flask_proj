@@ -7,6 +7,8 @@
   <title>Matt McFahn's Website</title>
   {% endif %}
   <link rel="stylesheet" href="../static/css/template.css" href = "{{ url_for('static',filename='/static/css/template.css') }}">
+  <script type = "text/javascript" src="static/js/template.js" charset="utf-8"></script>
+  <script type = "text/javascript" src="static/js/close_banner.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -16,12 +18,22 @@
         <a class = "navigation-link" href="/">Home</a>
         <a class = "navigation-link" href="/blog">Blog</a>
         <a class = "navigation-link" href="/contact">Contact</a>
+        <a class = "navigation-link" href="survey_results">Survey Results</a>
       </div>
     </nav>
     <hr>
-    {% block content %}{% endblock %}
+    <div class = "heading-banner" id="headBanner" style="visible">
+      Welcome to my personal webpage, during its very early stages
+      <button type="button" class="close" onclick="hideEle()">
+        <span aria-hidden="true">×</span>
+      </button>
     <hr>
-    <div class = "footer details">
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <hr>
+    <div class = "footer-details">
       <div class="copyright">
         <p>
         Copyright © 2020 | Matt McFahn | all rights reserved<br>
