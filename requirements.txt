@@ -14,6 +14,10 @@ Jinja2==2.10.3
 kiwisolver==1.1.0
 MarkupSafe==1.1.1
 matplotlib==1.1.0
+mkl_fft==1.0.15
+mkl_random==1.1.0
+mkl_service==2.3.0
+numpy==1.18.1
 psycopg2==2.8.4
 pyparsing==2.4.6
 python-dateutil==2.8.1
