@@ -10,7 +10,7 @@ import io
 
 
 
-sql_uri = r'postgres://ojsogizyxpmsht:2b62fd599fbac77125c5991edccf4d10f811fce0e72f9765597bfb8fac10d5df@ec2-174-129-255-15.compute-1.amazonaws.com:5432/d4ou5ir17dk44p?sslmode=require'
+sql_uri = r'postgres://cwkvewiosfvzlu:1bb7de78d11d9213d7e2024bb39948279934f1bf8a92e72f5f396c900c50c823@ec2-54-92-174-171.compute-1.amazonaws.com:5432/de2f69d5u6noqr?sslmode=require'
 #old_uri = r'postgresql://postgres:' + config.passwords['postgresql'] +'@localhost/personal_portfolio_submissions'
 
 app = Flask(__name__)
