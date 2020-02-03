@@ -1,4 +1,3 @@
-nomkl
 atom==0.4.3
 certifi==2019.11.28
 chardet==3.0.4
