@@ -80,15 +80,15 @@ def survey_results():
         # Code to select avg height
         return render_template("survey_results.html", title="Survey Results")
 
-@app.route("/plot/temp")
-def plot_temp():
-    fig = survey_summary_barchart()
-    canvas = FigureCanvas(fig)
-    output = io.BytesIO()
-    canvas.print_png(output)
-    response = make_response(output.getvalue())
-    response.mimetype = 'image/png'
-    return response
+#@app.route("/plot/temp")
+#def plot_temp():
+#    fig = survey_summary_barchart()
+#    canvas = FigureCanvas(fig)
+#    output = io.BytesIO()
+#    canvas.print_png(output)
+#    response = make_response(output.getvalue())
+#    response.mimetype = 'image/png'
+#    return response
 
 
 if __name__ == "__main__":
