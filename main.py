@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, make_response
 from flask_sqlalchemy import SQLAlchemy
-import config
 from send_email import email_comments
-from smtplib import SMTPRecipientsRefused
 
 from survey_summaries import survey_summary_barchart
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
