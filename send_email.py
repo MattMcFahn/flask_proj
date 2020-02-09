@@ -1,5 +1,9 @@
 import smtplib
-import config
+try:
+    import config
+except:
+    pass
+
 import os
 
 def email():
@@ -10,7 +14,7 @@ def email():
         from config import emails
         from_email_add = emails['gmail']
     except ImportError:
-        from_email_add = os.environ.get['GMAIL']
+        from_email_add = os.environ['GMAIL']
     return from_email_add
 
 
@@ -22,7 +26,7 @@ def email_password():
         from config import passwords
         gmail_password = passwords['gmail']
     except ImportError:
-        gmail_password = os.environ.get['GMAIL_PASSWORD']
+        gmail_password = os.environ['GMAIL_PASSWORD']
     return gmail_password
 
 def email_comments(email_target, comments):
