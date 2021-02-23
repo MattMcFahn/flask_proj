@@ -1,3 +1,5 @@
 config.py
 __pycache__
 envs
+flask-app.pem
+.DS_Store
